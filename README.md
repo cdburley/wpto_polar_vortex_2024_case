@@ -24,3 +24,17 @@ time series from the WECC 2030 ADS Gridview file.
 4) There are some regions that have no mapping to BAs in EIA-930. For those regions I used the raw time series from 
 the WECC 2030 ADS Gridview file. Those BAs are TH_Mead, TH_Malin, and TH_PV - all of which have 0 loads in the WECC 
 2030 ADS GridView file.
+
+## Paper Text
+Loads in this analysis reflect what would happen if the 2024 polar vortex event over the Pacific Northwest impacted the 
+electric grid of 2030. We started from the EIA-930 dataset which contains historical hourly loads for each Balancing 
+Authority (BA) in the conterminous United States (U.S.). From the full dataset we extracted the hourly loads for the 2024 
+weather year (1-Jan 2024 through 31-Jan 2024). To translate the impacts onto the 2030 system we scaled the loads up 
+until the annual energy in each BA matched the annual energy in the 2030 Anchor Dataset (ADS) formulated by the 
+Western Electricity Coordinating Council (WECC). There is a 1:1 match between most BAs in EIA-930 and those in the 
+WECC 2030 ADS GridView file. Exceptions to this include PG&E, NEVP, and PACE which are broken down into subzones in the 
+WECC 2030 ADS but report a single hourly load value in EIA-930. For those regions the scaling to 2030-levels was done 
+for the BA as a whole but then we broke up the total loads into the subzones using the load fraction for each subzone 
+using the WECC 2030 ADS to define the subzone load fractions. Additionally, AESO, BCHA, and CFE are outside the U.S.
+and thus did not report loads in EIA-930. Three additional BAs, TH_Mead, TH_Malin, and TH_PV, had no match in EIA-930. 
+For each of these regions the original loads from the WECC 2030 ADS GridView file were replicated in the scaled data.
